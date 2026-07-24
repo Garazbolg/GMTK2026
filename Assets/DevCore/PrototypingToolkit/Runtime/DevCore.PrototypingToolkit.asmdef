@@ -1,0 +1,20 @@
+{
+    "name": "DevCore.PrototypingToolkit",
+    "rootNamespace": "DevCore.PrototypingToolkit",
+    "references": [
+        "DevCore.Core",
+        "DevCore.FeedbackEngine",
+        "DevCore.SceneManager",
+        "DevCore.ScriptableVariables",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,20 @@
+{
+    "name": "DevCore.ScriptableVariables.Editor",
+    "rootNamespace": "DevCore.ScriptableVariables.Editor",
+    "references": [
+        "DevCore.Core",
+        "DevCore.Core.Editor",
+        "DevCore.ScriptableVariables"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

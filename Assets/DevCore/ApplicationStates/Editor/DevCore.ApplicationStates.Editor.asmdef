@@ -1,0 +1,19 @@
+{
+    "name": "DevCore.ApplicationStates.Editor",
+    "rootNamespace": "DevCore.ApplicationStates.Editor",
+    "references": [
+        "DevCore.ApplicationStates",
+        "DevCore.Core.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

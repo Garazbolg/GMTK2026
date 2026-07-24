@@ -1,0 +1,17 @@
+{
+    "name": "DevCore.DotweenExtension",
+    "rootNamespace": "DOTweenExtension",
+    "references": [
+        "DevCore.Core",
+        "DevCore.FeedbackEngine"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

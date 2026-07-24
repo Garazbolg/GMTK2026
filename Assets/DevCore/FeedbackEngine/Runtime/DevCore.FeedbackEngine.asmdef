@@ -1,0 +1,17 @@
+{
+    "name": "DevCore.FeedbackEngine",
+    "rootNamespace": "DevCore.FeedbackEngine",
+    "references": [
+        "DevCore.Core",
+        "Unity.RenderPipelines.Core.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
