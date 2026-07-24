@@ -1,0 +1,16 @@
+{
+    "name": "DevCore.Platform",
+    "rootNamespace": "DevCore.Platform",
+    "references": [
+        "DevCore.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

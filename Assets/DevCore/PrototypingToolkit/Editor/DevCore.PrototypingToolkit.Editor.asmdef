@@ -1,0 +1,20 @@
+{
+    "name": "DevCore.PrototypingToolkit.Editor",
+    "rootNamespace": "DevCore.PrototypingToolkit.Editor",
+    "references": [
+        "DevCore.Core",
+        "DevCore.Core.Editor",
+        "DevCore.PrototypingToolkit"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

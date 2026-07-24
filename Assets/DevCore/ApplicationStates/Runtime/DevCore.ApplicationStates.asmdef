@@ -1,0 +1,14 @@
+{
+    "name": "DevCore.ApplicationStates",
+    "rootNamespace": "DevCore.ApplicationStates",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

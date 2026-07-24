@@ -1,0 +1,19 @@
+{
+    "name": "DevCore.DataBrowser.Editor",
+    "rootNamespace": "DevCore.DataBrowser.Editor",
+    "references": [
+        "DevCore.Core",
+        "DevCore.Core.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

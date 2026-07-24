@@ -1,0 +1,19 @@
+{
+    "name": "DevCore.Core.Editor",
+    "rootNamespace": "DevCore.Core.Editor",
+    "references": [
+        "DevCore.Core",
+        "Unity.RenderPipelines.Core.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
