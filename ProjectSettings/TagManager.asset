@@ -14,9 +14,9 @@ TagManager:
   - UI
   - Player
   - Mobs
-  - Projectiles
+  - PlayerProjectiles
   - Loot
-  - 
+  - EnemyProjectiles
   - 
   - 
   - 
