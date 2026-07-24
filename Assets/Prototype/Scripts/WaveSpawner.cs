@@ -36,17 +36,10 @@ public class WaveSpawner : MonoBehaviour
     {
         lastWaveTime = Time.time + timeBeforeFirstWave - timeBetweenWaves;
         currentWaveIndex = 0;
+        StartCoroutine(SpawnNextWave());
     }
-
-    private void Update()
-    {
-        if (Time.time - lastWaveTime > timeBetweenWaves)
-        {
-            lastWaveTime = Time.time;
-            StartCoroutine(SpawnNextWave());
-        }
-    }
-
+    
+    
     private IEnumerator SpawnNextWave()
     {
         if (currentWaveIndex < waves.Length)
@@ -85,6 +78,8 @@ public class WaveSpawner : MonoBehaviour
                 }
                 yield return new WaitForSeconds(timeBetweenEnemies);
             }
+            yield return new WaitForSeconds(timeBetweenWaves);
+            yield return StartCoroutine(SpawnNextWave());
         }
     }
 }
