@@ -10,14 +10,27 @@ public class Weapon : ScriptableObject
 
     public GameObject weaponVisual;
     
-    public Bullet[] bulletPrefabs;
     public GameObject onThrow;
     public GameObject onEmptyInHand;
     public GameObject onDrop;
     
     public Gradient ammoGradient;
     
-    public int ammo => bulletPrefabs.Length;
+    [Serializable]
+    public struct FireOrigin
+    {
+        public Bullet bulletPrefab;
+        public Vector2 position;
+        public float rotation;
+    }
+    
+    [Serializable]
+    public struct FireSalve
+    {
+        public FireOrigin[] fireOrigins;
+    }
+    
+    public FireSalve[] fireSequence;
 
     public void OnEquip(CharacterController controller)
     {
@@ -25,9 +38,9 @@ public class Weapon : ScriptableObject
         {
             controller.currentWeapon.OnUnequip(controller);
         }
+        controller.currentSequenceIndex = 0;
         controller.currentDuration = duration;
         controller.currentWeapon = this;
-        controller.currentAmmo = ammo;
         controller.lastFireTime = Time.time + (timeBeforeFirstFire - 1f/baseFrequency);
         Instantiate(weaponVisual, controller.firePoint.position, controller.firePoint.rotation, controller.firePoint);
     }
@@ -39,15 +52,14 @@ public class Weapon : ScriptableObject
             Destroy(controller.firePoint.GetChild(0).gameObject);
         }
     }
-
-    public Color GetAmmoColor(int ammoIndex)
-    {
-        return ammoGradient.Evaluate(ammoIndex / ((float)ammo-1));
-    }
     
-    public void Fire(int currentAmmo, Transform firePoint)
+    public void Fire(int fireSequenceIndex, Transform firePoint)
     {
-        Instantiate(bulletPrefabs[ammo-currentAmmo], firePoint.position, firePoint.rotation);
+        var fireSalve = fireSequence[fireSequenceIndex%fireSequence.Length];
+        foreach (var fireOrigin in fireSalve.fireOrigins)
+        {
+            Instantiate(fireOrigin.bulletPrefab, firePoint.position + firePoint.TransformDirection(fireOrigin.position), firePoint.rotation * Quaternion.Euler(0, 0, fireOrigin.rotation));
+        }
     }
     
     public void FireEmpty(Transform firePoint)

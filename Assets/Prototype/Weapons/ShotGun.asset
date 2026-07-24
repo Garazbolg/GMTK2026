@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02038ea0791d4fbbb3f366f2ca6bdab3, type: 3}
-  m_Name: BaseWeapon
+  m_Name: ShotGun
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   duration: 3
-  baseFrequency: 2
+  baseFrequency: 0.8
   timeBeforeFirstFire: 0
   weaponVisual: {fileID: 9027582129732202419, guid: 13e3255214c755b4a9ac79ddd5636d39, type: 3}
   onThrow: {fileID: 2637827648317391121, guid: ca35ab28588ff9149a9fe36ec68dd236, type: 3}
@@ -52,5 +52,17 @@ MonoBehaviour:
   fireSequence:
   - fireOrigins:
     - bulletPrefab: {fileID: 1797592429974544851, guid: 5e05fdc9e7ffee9498818361749796e2, type: 3}
+      position: {x: -0.1, y: 0.4}
+      rotation: 20
+    - bulletPrefab: {fileID: 1797592429974544851, guid: 5e05fdc9e7ffee9498818361749796e2, type: 3}
+      position: {x: -0.05, y: 0.2}
+      rotation: 10
+    - bulletPrefab: {fileID: 1797592429974544851, guid: 5e05fdc9e7ffee9498818361749796e2, type: 3}
       position: {x: 0, y: 0}
       rotation: 0
+    - bulletPrefab: {fileID: 1797592429974544851, guid: 5e05fdc9e7ffee9498818361749796e2, type: 3}
+      position: {x: -0.05, y: -0.2}
+      rotation: -10
+    - bulletPrefab: {fileID: 1797592429974544851, guid: 5e05fdc9e7ffee9498818361749796e2, type: 3}
+      position: {x: -0.1, y: -0.4}
+      rotation: -20

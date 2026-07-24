@@ -23,9 +23,11 @@ public class CharacterController : MonoBehaviour
     public Transform firePoint;
 
     public float currentDuration;
-    public int currentAmmo;
     public float lastFireTime;
     public bool canMove = true;
+    public int currentSequenceIndex;
+    
+    public bool DEBUG_NEVERREDUCEDURATION;
 
     public float minThrowDuration;
     
@@ -83,14 +85,14 @@ public class CharacterController : MonoBehaviour
         
         if(currentWeapon != null && currentDuration > 0)
         {
-            currentDuration -= Time.deltaTime;
+            if(!DEBUG_NEVERREDUCEDURATION)
+                currentDuration -= Time.deltaTime;
             durationText.text = currentDuration.ToString("0.0");
             if(currentDuration <= 0)
             {
                 currentWeapon.FireEmpty(transform);
                 currentWeapon.OnUnequip(this);
                 currentWeapon = null;
-                currentAmmo = 0;
             }
         }
         else
@@ -122,19 +124,9 @@ public class CharacterController : MonoBehaviour
 
     public void Fire()
     {
-        if (currentAmmo > 0)
-        {
-            currentWeapon.Fire(currentAmmo, firePoint);
-            currentAmmo--;
-            EnemyFireTick();
-        }
-        else
-        {
-            currentWeapon.FireEmpty(firePoint);
-            currentWeapon.OnUnequip(this);
-            currentWeapon = null;
-            currentAmmo = 0;
-        }
+        currentWeapon.Fire(currentSequenceIndex, firePoint);
+        EnemyFireTick();
+        currentSequenceIndex++;
     }
     
     public void InputThrow(InputAction.CallbackContext context)
@@ -149,7 +141,6 @@ public class CharacterController : MonoBehaviour
             currentWeapon.Throw(firePoint, Mathf.Max(currentDuration, minThrowDuration));
             currentWeapon.OnUnequip(this);
             currentWeapon = null;
-            currentAmmo = 0;
             KnockBack(-transform.right * dodgeSpeed, dodgeDuration);
         }
     }

@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &16516001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,7 +679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1108211499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -989,6 +989,14 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2848577438056322401, guid: 2119974fcfa48b44e80c7c1822678650, type: 3}
+      propertyPath: currentWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 66ec8de3fd573ef4eb78ab7bcd0f6e71, type: 2}
+    - target: {fileID: 2848577438056322401, guid: 2119974fcfa48b44e80c7c1822678650, type: 3}
+      propertyPath: DEBUG_NEVERREDUCEDURATION
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3591186311459092160, guid: 2119974fcfa48b44e80c7c1822678650, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1031,6 +1039,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7885297428870511722, guid: 2119974fcfa48b44e80c7c1822678650, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600405779678428777, guid: 2119974fcfa48b44e80c7c1822678650, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
