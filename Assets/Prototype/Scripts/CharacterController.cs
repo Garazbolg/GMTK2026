@@ -109,7 +109,7 @@ public class CharacterController : MonoBehaviour
         
         currentDurationVariable.value = currentWeapon != null ? currentDuration : 3;
         currentFrequencyVariable.value = currentWeapon != null ? currentWeapon.baseFrequency : 3;
-        totalDurationVariable.value = currentWeapon != null ? currentWeapon.duration : 3;
+        totalDurationVariable.value = currentWeapon != null ? currentWeapon.duration : 0;
     }
     
     public void Move(Vector2 direction)
