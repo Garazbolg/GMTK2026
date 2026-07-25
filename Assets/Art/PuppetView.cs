@@ -70,6 +70,12 @@ public class PuppetView : MonoBehaviour
         weaponSpriteLeft.enabled = false;
     }
 
+    public void SetWeaponVisible(bool visible)
+    {
+        weaponSpriteLeft.enabled = visible;
+        weaponSpriteRight.enabled = visible;
+    }
+
     static Vector3 NoZ(Vector3 pos)
     {
         pos.z = 0;

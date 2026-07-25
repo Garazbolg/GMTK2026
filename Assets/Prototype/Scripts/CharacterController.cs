@@ -17,6 +17,8 @@ public class CharacterController : MonoBehaviour
     public ScriptableFloat totalDurationVariable;
     public ScriptableFloat currentDurationVariable;
     public ScriptableFloat currentFrequencyVariable;
+    
+    public PuppetView puppetView;
 
     public Weapon currentWeapon;
     
@@ -74,6 +76,8 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
+        puppetView.SetWeaponVisible(currentWeapon != null);
+        
         if (canMove)
         {
             var moveDirection = moveAction.action.ReadValue<Vector2>();
@@ -90,6 +94,7 @@ public class CharacterController : MonoBehaviour
         
         if(currentWeapon != null && currentDuration > 0)
         {
+            puppetView.SetExplosionNearFeedback(currentWeapon != null ? (currentWeapon.duration - currentDuration) / currentWeapon.duration : 0);
             if(!DEBUG_NEVERREDUCEDURATION)
                 currentDuration -= Time.deltaTime;
             if(durationText != null)
@@ -129,13 +134,16 @@ public class CharacterController : MonoBehaviour
     {
         if(direction != Vector2.zero)
         {
-            transform.right = direction.normalized;
+            if(currentWeapon != null)
+                puppetView.AimDirection(direction.normalized);
+            //transform.right = direction.normalized;
         }
     }
 
     public void Fire()
     {
-        currentWeapon.Fire(currentSequenceIndex, firePoint);
+        currentWeapon.Fire(currentSequenceIndex, puppetView.GetProjectileSpawnTransform());
+        puppetView.PlayShotFeedback(puppetView.recoilStrength);
         EnemyFireTick();
         currentSequenceIndex++;
     }
@@ -149,7 +157,7 @@ public class CharacterController : MonoBehaviour
     {
         if (currentWeapon != null)
         {
-            currentWeapon.Throw(firePoint, Mathf.Max(currentDuration, minThrowDuration));
+            currentWeapon.Throw(puppetView.GetProjectileSpawnTransform(), Mathf.Max(currentDuration, minThrowDuration));
             currentWeapon.OnUnequip(this);
             currentWeapon = null;
             KnockBack(-transform.right * dodgeSpeed, dodgeDuration);

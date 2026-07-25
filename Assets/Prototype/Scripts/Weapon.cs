@@ -8,7 +8,7 @@ public class Weapon : ScriptableObject
     public float baseFrequency;
     public float timeBeforeFirstFire;
 
-    public GameObject weaponVisual;
+    //public GameObject weaponVisual;
     
     public GameObject onThrow;
     public GameObject onEmptyInHand;
@@ -42,7 +42,8 @@ public class Weapon : ScriptableObject
         controller.currentDuration = duration;
         controller.currentWeapon = this;
         controller.lastFireTime = Time.time + (timeBeforeFirstFire - 1f/baseFrequency);
-        Instantiate(weaponVisual, controller.firePoint.position, controller.firePoint.rotation, controller.firePoint);
+        //Instantiate(weaponVisual, controller.firePoint.position, controller.firePoint.rotation, controller.firePoint);
+        // TODO Set Weapon Sprite
     }
 
     public void OnUnequip(CharacterController controller)
