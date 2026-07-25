@@ -1,5 +1,5 @@
+//#define PUPPETVIEW_TEST
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -68,6 +68,13 @@ public class PuppetView : MonoBehaviour
         weaponSpriteLeft.enabled = false;
     }
 
+    static Vector3 NoZ(Vector3 pos)
+    {
+        pos.z = 0;
+        return pos;
+    }
+
+#if PUPPETVIEW_TEST
     void Update()
 	{
 		TestMouseAimDirection();
@@ -92,10 +99,5 @@ public class PuppetView : MonoBehaviour
         mouseWorldPos.z = 0;
         return mouseWorldPos;
     }
-
-    static Vector3 NoZ(Vector3 pos)
-    {
-        pos.z = 0;
-        return pos;
-    }
+#endif
 }
