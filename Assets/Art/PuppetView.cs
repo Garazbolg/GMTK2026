@@ -18,6 +18,7 @@ public class PuppetView : MonoBehaviour
 
     #region Gameplay API
     public Vector3 GetProjectileSpawnPosition() => projectileSpawn.position;
+    public Vector3 GetProjectileSpawnDirection() => projectileSpawn.right;
 
     public void AimPosition(Vector3 worldPosition)
     {
