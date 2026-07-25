@@ -30,7 +30,7 @@ MonoBehaviour:
   m_AudioClips:
   - {fileID: 8300000, guid: dc63b05f11dc35b43b6e7b28af5b0d7c, type: 3}
   m_MixerGroup: {fileID: 0}
-  m_VolumeMinMax: {x: 0.9, y: 1.1}
+  m_VolumeMinMax: {x: 0.8, y: 0.8}
   m_PitchMinMax: {x: 1, y: 1}
   m_StereoPan: 0
   m_Delay: 0

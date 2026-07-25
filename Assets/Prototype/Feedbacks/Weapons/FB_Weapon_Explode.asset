@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8309165679267662098
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9881655a01bbe542b0ab602b77776e0, type: 3}
+  m_Name: ShakeCameraPositionFeedback
+  m_EditorClassIdentifier: DevCore.DotweenExtension::DevCore.FeedbackEngine.ShakeCameraPositionFeedback
+  m_Active: 1
+  priority: 1
+  m_Duration: 0.5
+  m_Strength: {x: 0.4, y: 0.4, z: 0}
+  m_Vibrato: 60
+  m_FadeOut: 1
+  m_Randomness: 90
+--- !u!114 &-7580974290291295066
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4c6a997986292488448c183666a6ca, type: 3}
+  m_Name: ParticleEffectFeedback
+  m_EditorClassIdentifier: DevCore.FeedbackEngine::DevCore.FeedbackEngine.ParticleEffectFeedback
+  m_Active: 1
+  m_ParticleEffect: {fileID: 525593302893375546, guid: 8fb3e06f55d32d040ac0cf1e11e34044, type: 3}
+  m_PositionOffset: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_SpawnWithParentRotation: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55bfe234269466428a6c933ce2b4867, type: 3}
+  m_Name: FB_Weapon_Explode
+  m_EditorClassIdentifier: DevCore.FeedbackEngine::DevCore.FeedbackEngine.FeedbackAsset
+  m_Components:
+  - {fileID: 4823013402482521548}
+  - {fileID: -8309165679267662098}
+  - {fileID: -7580974290291295066}
+  - {fileID: 6893455116422235516}
+--- !u!114 &4823013402482521548
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123e731e6a52c0947aad499e61a9ee7f, type: 3}
+  m_Name: SoundEffectFeedback
+  m_EditorClassIdentifier: DevCore.FeedbackEngine::DevCore.FeedbackEngine.SoundEffectFeedback
+  m_Active: 1
+  m_AudioClips:
+  - {fileID: 8300000, guid: 6743dec387b31c447941cdd8cc780d33, type: 3}
+  m_MixerGroup: {fileID: 0}
+  m_VolumeMinMax: {x: 1.1, y: 1.1}
+  m_PitchMinMax: {x: 1, y: 1}
+  m_StereoPan: 0
+  m_Delay: 0
+--- !u!114 &6893455116422235516
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f36dc1111a76c4fbce9cd0db2077b9, type: 3}
+  m_Name: VolumeEffectFeedback
+  m_EditorClassIdentifier: DevCore.FeedbackEngine::DevCore.FeedbackEngine.VolumeEffectFeedback
+  m_Active: 1
+  m_Profile: {fileID: 11400000, guid: 4c68208cc4e600e45998dab888f4c9d7, type: 2}
+  m_Priority: 0
+  m_Duration: 0.15
+  m_WeightOverLifetime:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.09780884
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -16,7 +16,7 @@ MonoBehaviour:
   m_AudioClips:
   - {fileID: 8300000, guid: c4213c656c0d21e42beb46eb3c15eb6a, type: 3}
   m_MixerGroup: {fileID: 0}
-  m_VolumeMinMax: {x: 0.6, y: 0.7}
+  m_VolumeMinMax: {x: 0.35, y: 0.35}
   m_PitchMinMax: {x: 1.1, y: 1.1}
   m_StereoPan: 0
   m_Delay: 0
