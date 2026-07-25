@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using DevCore.ScriptableVariables;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
     public int maxHealth = 5;
     public int currentHealth;
+    public ScriptableInt currentHealthVariable;
+    public ScriptableInt maxHealthVariable;
     
     public bool invincible = false;
     public float invincibilityOnHitDuration;
@@ -16,6 +19,14 @@ public class Health : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        if(currentHealthVariable != null)
+        {
+            currentHealthVariable.value = currentHealth;
+        }
+        if(maxHealthVariable != null)
+        {
+            maxHealthVariable.value = maxHealth;
+        }
     }
 
     public void TakeDamage(int damage)
@@ -35,6 +46,15 @@ public class Health : MonoBehaviour
                 invincible = true;
                 Invoke(nameof(ResetInvincibility), invincibilityOnHitDuration);
             }
+        }
+        
+        if(currentHealthVariable != null)
+        {
+            currentHealthVariable.value = currentHealth;
+        }
+        if(maxHealthVariable != null)
+        {
+            maxHealthVariable.value = maxHealth;
         }
     }
 
