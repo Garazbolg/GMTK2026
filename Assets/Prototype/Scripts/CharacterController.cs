@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DevCore.FeedbackEngine;
 using DevCore.ScriptableVariables;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -37,6 +38,7 @@ public class CharacterController : MonoBehaviour
     public bool DEBUG_NEVERREDUCEDURATION;
 
     public float minThrowDuration;
+    
     
     void Start()
     {

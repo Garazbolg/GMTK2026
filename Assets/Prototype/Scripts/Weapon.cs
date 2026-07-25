@@ -1,4 +1,5 @@
 ﻿using System;
+using DevCore.FeedbackEngine;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
@@ -31,6 +32,11 @@ public class Weapon : ScriptableObject
     }
     
     public FireSalve[] fireSequence;
+    
+    [Header("Feedbacks")]
+    public FeedbackAsset equipFeedback = null;
+    public FeedbackAsset shootFeedback = null;
+    public FeedbackAsset throwFeedback = null;
 
     public void OnEquip(CharacterController controller)
     {
@@ -44,6 +50,7 @@ public class Weapon : ScriptableObject
         controller.lastFireTime = Time.time + (timeBeforeFirstFire - 1f/baseFrequency);
         //Instantiate(weaponVisual, controller.firePoint.position, controller.firePoint.rotation, controller.firePoint);
         // TODO Set Weapon Sprite
+        equipFeedback?.Play(controller.gameObject);
     }
 
     public void OnUnequip(CharacterController controller)
@@ -61,6 +68,8 @@ public class Weapon : ScriptableObject
         {
             Instantiate(fireOrigin.bulletPrefab, firePoint.position + firePoint.TransformDirection(fireOrigin.position), firePoint.rotation * Quaternion.Euler(0, 0, fireOrigin.rotation));
         }
+        
+        shootFeedback?.Play(firePoint.gameObject);
     }
     
     public void FireEmpty(Transform firePoint)
@@ -78,5 +87,7 @@ public class Weapon : ScriptableObject
             var go = Instantiate(onThrow, throwPoint.position, throwPoint.rotation);
             go.GetComponent<AfterSecondsBecomes>().secondsBecomes = remainingDuration;
         }
+        
+        throwFeedback?.Play(throwPoint.gameObject);
     }
 }

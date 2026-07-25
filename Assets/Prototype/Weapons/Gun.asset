@@ -15,7 +15,6 @@ MonoBehaviour:
   duration: 3
   baseFrequency: 2
   timeBeforeFirstFire: 0
-  weaponVisual: {fileID: 9027582129732202419, guid: 13e3255214c755b4a9ac79ddd5636d39, type: 3}
   onThrow: {fileID: 2637827648317391121, guid: ca35ab28588ff9149a9fe36ec68dd236, type: 3}
   onEmptyInHand: {fileID: 5996790565460883912, guid: dfc45198b29fff3408eaf61c8560a4d6, type: 3}
   onDrop: {fileID: 6215266095820791324, guid: feeaaab31d058894ca44deaf93b095a2, type: 3}
@@ -54,3 +53,6 @@ MonoBehaviour:
     - bulletPrefab: {fileID: 1797592429974544851, guid: 5e05fdc9e7ffee9498818361749796e2, type: 3}
       position: {x: 0, y: 0}
       rotation: 0
+  equipFeedback: {fileID: 11400000, guid: 4bf7eefa334cdfb41b51134ffe6a467a, type: 2}
+  shootFeedback: {fileID: 11400000, guid: 8da5fef1ef73fb443a5005b3dac40a4c, type: 2}
+  throwFeedback: {fileID: 11400000, guid: f651edf444b520549b433932464fee9e, type: 2}
