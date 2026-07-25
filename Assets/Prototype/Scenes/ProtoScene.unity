@@ -150,8 +150,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveSpawner
   waves:
   - enemies:
-    - mobPrefab: {fileID: 6215266095820791324, guid: feeaaab31d058894ca44deaf93b095a2, type: 3}
+    - mobPrefab: {fileID: 5226740175740668398, guid: b9727881f97bf40429c65332ac8e8ee4, type: 3}
+      probability: 1.5
+    - mobPrefab: {fileID: 1039719938514688024, guid: fbb3ff8f1fe0e4442b21327fd236ffd9, type: 3}
       probability: 1
+    - mobPrefab: {fileID: 1039719938514688024, guid: d9e86103e75c5fc46b4698b5b3afcedb, type: 3}
+      probability: 0.1
     enemiesCount: 99999999
   timeBetweenWaves: 33
   spawnRadius: 6
@@ -723,7 +727,7 @@ MonoBehaviour:
     - mobPrefab: {fileID: 5824340135764460074, guid: 228b4b8890068dd4da4984bc809ae093, type: 3}
       probability: 1
     enemiesCount: 17
-  timeBetweenWaves: 20
+  timeBetweenWaves: 3
   spawnRadius: 11.07
   timeBeforeFirstWave: 3
   timeBetweenEnemies: 0.5
@@ -988,6 +992,10 @@ PrefabInstance:
     - target: {fileID: 233318202924331977, guid: 2119974fcfa48b44e80c7c1822678650, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590390488944460644, guid: 2119974fcfa48b44e80c7c1822678650, type: 3}
+      propertyPath: maxHealth
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3591186311459092160, guid: 2119974fcfa48b44e80c7c1822678650, type: 3}
       propertyPath: m_Name

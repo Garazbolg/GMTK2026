@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DevCore.ScriptableVariables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,10 @@ public class CharacterController : MonoBehaviour
     public InputActionReference lookAction;
     public InputActionReference throwAction;
     public InputActionReference dodgeAction;
+    
+    public ScriptableFloat totalDurationVariable;
+    public ScriptableFloat currentDurationVariable;
+    public ScriptableFloat currentFrequencyVariable;
 
     public Weapon currentWeapon;
     
@@ -87,7 +92,8 @@ public class CharacterController : MonoBehaviour
         {
             if(!DEBUG_NEVERREDUCEDURATION)
                 currentDuration -= Time.deltaTime;
-            durationText.text = currentDuration.ToString("0.0");
+            if(durationText != null)
+                durationText.text = currentDuration.ToString("0.0");
             if(currentDuration <= 0)
             {
                 currentWeapon.FireEmpty(transform);
@@ -97,8 +103,13 @@ public class CharacterController : MonoBehaviour
         }
         else
         {
-            durationText.text = "";
+            if(durationText != null)
+                durationText.text = "";
         }
+        
+        currentDurationVariable.value = currentWeapon != null ? currentDuration : 3;
+        currentFrequencyVariable.value = currentWeapon != null ? currentWeapon.baseFrequency : 3;
+        totalDurationVariable.value = currentWeapon != null ? currentWeapon.duration : 3;
     }
     
     public void Move(Vector2 direction)

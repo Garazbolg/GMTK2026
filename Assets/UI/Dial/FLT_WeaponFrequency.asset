@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa093dfb072bba249bb8213a5c0e5a14, type: 3}
   m_Name: FLT_WeaponFrequency
   m_EditorClassIdentifier: DevCore.ScriptableVariables::DevCore.ScriptableVariables.ScriptableFloat
-  m_Value: 1
+  m_Value: 3
   m_EditorValueChangeCallback: 1
