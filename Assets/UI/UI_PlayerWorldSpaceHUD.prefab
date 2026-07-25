@@ -84,7 +84,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!1 &2199094891983577064
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8551206134720638091}
   - component: {fileID: 2500151980312988074}
+  - component: {fileID: 2408669216608192898}
   m_Layer: 5
   m_Name: UI_WeaponDial
   m_TagString: Untagged
@@ -628,7 +629,20 @@ MonoBehaviour:
   durationValue: {fileID: 11400000, guid: 5ea354a1cae5a7f44af2b96878128825, type: 2}
   timeValue: {fileID: 11400000, guid: 63bd18a4d53f3ef4c8818bb78346cb8f, type: 2}
   frequencyValue: {fileID: 11400000, guid: c9d538953d837764497cf614bcf5e9d6, type: 2}
+  canvasGroup: {fileID: 2408669216608192898}
   progressBar: {fileID: 8252049546555473635}
   hand: {fileID: 5380260338867445083}
   markerParent: {fileID: 4731737857563167986}
   markerPrefab: {fileID: 6938186107906001865, guid: 2cf4460cb1ce3c44b95b1f4807b589a5, type: 3}
+--- !u!225 &2408669216608192898
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8476859790597871109}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

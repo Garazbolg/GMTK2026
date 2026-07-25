@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using DevCore.ScriptableVariables;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class WeaponDial : MonoBehaviour {
     public ScriptableFloat durationValue = null;
     public ScriptableFloat timeValue = null;
     public ScriptableFloat frequencyValue = null;
-    
-    
-    [Space]
+
+
+    [FormerlySerializedAs("group")] [Space]
+    public CanvasGroup canvasGroup = null; 
     public Image progressBar = null;
     public RectTransform hand = null;
-
-    [Space]
     public RectTransform markerParent = null;
     public Image markerPrefab = null;
     
@@ -40,8 +40,15 @@ public class WeaponDial : MonoBehaviour {
             Destroy(marker);
         } 
         _markers.Clear();
+        
+        var duration = durationValue.value;
+        if (duration > 0f) {
+            canvasGroup.alpha = 1f;
+        } else {
+            canvasGroup.alpha = 0f;
+            return;
+        }
 
-        var duration = Mathf.Max(durationValue.value, 0.001f);
         var frequency = Mathf.Max(frequencyValue.value, 0.001f);
         var period = 1f / frequency;
         
@@ -58,8 +65,11 @@ public class WeaponDial : MonoBehaviour {
     }
 
     private void SetCurrentPercentage() {
-        float time = timeValue.value; 
+        if (durationValue.value <= 0f) {
+            return;
+        }
         float duration = durationValue.value;
+        float time = Mathf.Clamp(timeValue.value, 0f, duration); 
         float t = time / duration;
         t = Mathf.Clamp01(t);
 
@@ -67,7 +77,7 @@ public class WeaponDial : MonoBehaviour {
         progressBar.fillAmount = t;
         
         
-        int consumedAmmos = Mathf.FloorToInt((duration - time) * frequencyValue.value);
+        int consumedAmmos = Mathf.FloorToInt((duration - time) * Mathf.Max(frequencyValue.value, 0.001f));
         consumedAmmos = Mathf.Min(consumedAmmos, _markers.Count);
         for (int i = 0; i < consumedAmmos; i++) {
             if (_markers[i].enabled) {
