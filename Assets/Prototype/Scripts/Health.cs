@@ -37,6 +37,7 @@ public class Health : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
             Die();
         }
         else
@@ -56,6 +57,12 @@ public class Health : MonoBehaviour
         {
             maxHealthVariable.value = maxHealth;
         }
+    }
+
+    public void Despawn()
+    {
+        // Despawn Effect ?
+        Destroy(gameObject);
     }
 
     private void Die()

@@ -157,10 +157,13 @@ MonoBehaviour:
     - mobPrefab: {fileID: 1039719938514688024, guid: d9e86103e75c5fc46b4698b5b3afcedb, type: 3}
       probability: 0.1
     enemiesCount: 99999999
+    waveDuration: 400000000
   timeBetweenWaves: 33
   spawnRadius: 6
+  currentWaveNumber: {fileID: 0}
+  mawWaveNumber: {fileID: 0}
+  timeBeforeWaveEnd: {fileID: 0}
   timeBeforeFirstWave: 5
-  timeBetweenEnemies: 4
   canSpawnInside: 1
 --- !u!4 &16516002
 Transform:
@@ -489,37 +492,42 @@ MonoBehaviour:
   - enemies:
     - mobPrefab: {fileID: 1406050880748248642, guid: f5c24485b6b3cfb4c8a42bc8f776429a, type: 3}
       probability: 1
-    - mobPrefab: {fileID: 5824340135764460074, guid: 228b4b8890068dd4da4984bc809ae093, type: 3}
-      probability: 1
-    enemiesCount: 3
+    enemiesCount: 10
+    waveDuration: 30
   - enemies:
     - mobPrefab: {fileID: 1406050880748248642, guid: f5c24485b6b3cfb4c8a42bc8f776429a, type: 3}
       probability: 1
     - mobPrefab: {fileID: 5824340135764460074, guid: 228b4b8890068dd4da4984bc809ae093, type: 3}
       probability: 1
-    enemiesCount: 5
+    enemiesCount: 15
+    waveDuration: 30
   - enemies:
     - mobPrefab: {fileID: 1406050880748248642, guid: f5c24485b6b3cfb4c8a42bc8f776429a, type: 3}
       probability: 1
     - mobPrefab: {fileID: 5824340135764460074, guid: 228b4b8890068dd4da4984bc809ae093, type: 3}
       probability: 1
-    enemiesCount: 8
+    enemiesCount: 20
+    waveDuration: 30
   - enemies:
     - mobPrefab: {fileID: 1406050880748248642, guid: f5c24485b6b3cfb4c8a42bc8f776429a, type: 3}
       probability: 1
     - mobPrefab: {fileID: 5824340135764460074, guid: 228b4b8890068dd4da4984bc809ae093, type: 3}
       probability: 1
-    enemiesCount: 12
+    enemiesCount: 25
+    waveDuration: 30
   - enemies:
     - mobPrefab: {fileID: 1406050880748248642, guid: f5c24485b6b3cfb4c8a42bc8f776429a, type: 3}
       probability: 1
     - mobPrefab: {fileID: 5824340135764460074, guid: 228b4b8890068dd4da4984bc809ae093, type: 3}
       probability: 1
-    enemiesCount: 17
+    enemiesCount: 30
+    waveDuration: 30
   timeBetweenWaves: 3
   spawnRadius: 11.07
+  currentWaveNumber: {fileID: 11400000, guid: 71341ab37cd1cf74a9662c49dc7b1355, type: 2}
+  mawWaveNumber: {fileID: 11400000, guid: bd523a53169ef9e4d944817ec7583a56, type: 2}
+  timeBeforeWaveEnd: {fileID: 11400000, guid: 069f22a05f9320d42a5d1338f9d89b3a, type: 2}
   timeBeforeFirstWave: 3
-  timeBetweenEnemies: 0.5
   canSpawnInside: 0
 --- !u!4 &1108211500
 Transform:
@@ -795,6 +803,7 @@ RectTransform:
   m_Children:
   - {fileID: 1391693756}
   - {fileID: 167861936}
+  - {fileID: 7122906482663884723}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1056,6 +1065,127 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2119974fcfa48b44e80c7c1822678650, type: 3}
+--- !u!114 &3255079346571233989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492037440274100227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Wave : 4 / 5
+
+    Duration : 29,98918'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 6b167dfd70a3c2146a58f35a35d03648, type: 2}
+  m_sharedMaterial: {fileID: 8962434973246641743, guid: 6b167dfd70a3c2146a58f35a35d03648, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 8
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &3492037440274100227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7122906482663884723}
+  - component: {fileID: 3532770179281375534}
+  - component: {fileID: 3255079346571233989}
+  - component: {fileID: 6167404976937610812}
+  m_Layer: 5
+  m_Name: Wave HUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!222 &3532770179281375534
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492037440274100227}
+  m_CullTransparentMesh: 1
 --- !u!1001 &4598638559374665779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1210,6 +1340,45 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a205381291b231942a33f07ba1885306, type: 3}
+--- !u!114 &6167404976937610812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492037440274100227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0962af40fdef784daf5b5a7a6aed634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DevCore.PrototypingToolkit::DevCore.PrototypingToolkit.VariableUIReader
+  m_Text: 'Wave : {0} / {1}
+
+    Duration : {2:0.00}'
+  m_Variables:
+  - {fileID: 11400000, guid: 71341ab37cd1cf74a9662c49dc7b1355, type: 2}
+  - {fileID: 11400000, guid: bd523a53169ef9e4d944817ec7583a56, type: 2}
+  - {fileID: 11400000, guid: 069f22a05f9320d42a5d1338f9d89b3a, type: 2}
+  m_TextField: {fileID: 3255079346571233989}
+--- !u!224 &7122906482663884723
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492037440274100227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1484261971}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 551, y: 451}
+  m_SizeDelta: {x: 709.55, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
